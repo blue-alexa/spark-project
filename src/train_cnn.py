@@ -1,7 +1,7 @@
 from data_manager import data_manager
 from cnn import CNN
 from trainer import Solver
-from viz_features import Viz_Feat
+from visualized_features import Viz_Feat
 import random
 
 

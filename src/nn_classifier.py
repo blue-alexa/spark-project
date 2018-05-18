@@ -2,24 +2,17 @@ import IPython
 from numpy.random import uniform
 import random
 import time
-
 import numpy as np
 import glob
 import os
-
 import matplotlib.pyplot as plt
-
-
 import sys
-
 from  sklearn.neighbors import KNeighborsClassifier
 
 
 
-class NN(): 
-
-
-	def __init__(self,train_data,val_data,n_neighbors=5):
+class NN():
+        def __init__(self,train_data,val_data,n_neighbors=5):
 
 		self.train_data = train_data
 		self.val_data = val_data
@@ -28,8 +21,7 @@ class NN():
 
 		self.model = KNeighborsClassifier(n_neighbors=n_neighbors)
 
-		
-	def train_model(self): 
+	def train_model(self):
 
 		'''
 		Train Nearest Neighbors model

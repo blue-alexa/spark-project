@@ -2,10 +2,8 @@ import os
 import numpy as np
 from numpy.random import random
 import cv2
-
 import copy
 import glob
-
 import cPickle as pickle
 import IPython
 
