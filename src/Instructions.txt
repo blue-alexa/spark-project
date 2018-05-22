@@ -13,9 +13,8 @@ Instructions to run:
     Result should be the resulting chart. 	
     Running time: 30-40 mins
 
-5. Run the visualized_features.py
-   Result should be a total of 15 images from passing the images of the 3 different fruit and veggies through different convolution layers and filters.
-   Running time on AWS (with 4-8GPU, 16RAM)  
+5. Result should be a total of 15 images from passing the images of the 3 different fruit and veggies through different convolution layers and filters.
+    Running time on AWS (with 4-8GPU, 16RAM) - 1 hour  
 
 6. Run the train_nn.py
    Result should be performance chart.

@@ -11,7 +11,6 @@ class Viz_Feat(object):
 
 
     def __init__(self,val_data,train_data, class_labels,sess):
-
         self.val_data = val_data
         self.train_data = train_data
         self.CLASS_LABELS = class_labels
@@ -22,23 +21,18 @@ class Viz_Feat(object):
 
 
     def vizualize_features(self,net):
-
         images = [0,10,100]
         '''
         Compute the response map for the index images
         '''
         for idx in images:
-
             datum = self.val_data[idx]
             batch_eval = np.zeros([1,datum['features'].shape[0],datum['features'].shape[1],datum['features'].shape[2]])
             batch_eval[0,:,:,:] = datum['features']
-
             batch_label = np.zeros([1,len(self.CLASS_LABELS)])
             batch_label[0,:] = datum['label']
-
-            response_map = self.sess.run(net.response_map,
+            response_map = self.sess.run(net.conv,
                                    feed_dict={net.images: batch_eval, net.labels: batch_label})
-
             img_name = 'image_'+str(idx)+'.png'
             cv2.imwrite(img_name,datum['c_img'])
             for i in range(5):
