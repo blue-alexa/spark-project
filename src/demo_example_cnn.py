@@ -68,5 +68,3 @@ class CNN(object):
             #IMPLEMENTATION OF A SOFTMAX CROSS ENTROPY LOSS FUNCTION
             self.class_loss = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(labels = classes,logits = predicts))
 
-       
-          

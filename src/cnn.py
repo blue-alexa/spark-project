@@ -47,6 +47,33 @@ class CNN(object):
                 Network should start out with the images function
                 Then it should return net
                 '''
+                ###SLIM SPECIFYING A CONV LAYER WITH 80 FILters as SIZE 15 by 15
+                net = slim.conv2d(images, 5, [15,15], scope='conv_1')
+                self.conv = net
+
+                ### SLIM USING POOLING ON THE NETWORK. THE POOLING REGION CONSIDERED IS 3 by 3
+                net = slim.max_pool2d(net, [3, 3], scope='pool')
+
+                ### TO GO FROM A CONVOLUTIONAL LAYER TO A FULLY CONNECTED YOU NEED TO FLATTEN THE ARRAY
+                net = slim.flatten(net, scope='flat')
+
+                ###SLIM SPECIFYING A FULLY CONNECTED LAYER WHOSE OUT IS 10
+                net = slim.fully_connected(net, 512, scope='fc_1')
+
+                ###SLIM SPECIFYING A FULLY CONNECTED LAYER WHOSE OUT IS 25
+                net = slim.fully_connected(net, 25, scope='fc_2')
+
+                #net = slim.conv2d(images, 5, [15,15], scope='conv_0')
+
+                #self.response_map = net
+
+                #net = slim.max_pool2d(net, [3, 3], scope='pool')
+
+                #net = slim.flatten(images, scope='flat')
+
+                #net = slim.fully_connected(net, 512, scope='fc_2')
+                #net = slim.fully_connected(net, num_outputs,
+                #                           activation_fn=None, scope='fc_36')
 
 
         return net

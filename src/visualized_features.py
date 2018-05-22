@@ -27,6 +27,25 @@ class Viz_Feat(object):
         '''
         Compute the response map for the index images
         '''
+        for idx in images:
+
+            datum = self.val_data[idx]
+            batch_eval = np.zeros([1,datum['features'].shape[0],datum['features'].shape[1],datum['features'].shape[2]])
+            batch_eval[0,:,:,:] = datum['features']
+
+            batch_label = np.zeros([1,len(self.CLASS_LABELS)])
+            batch_label[0,:] = datum['label']
+
+            response_map = self.sess.run(net.response_map,
+                                   feed_dict={net.images: batch_eval, net.labels: batch_label})
+
+            img_name = 'image_'+str(idx)+'.png'
+            cv2.imwrite(img_name,datum['c_img'])
+            for i in range(5):
+                img = self.revert_image(response_map[0,:,:,i])
+                img_name = 'image_'+str(idx)+'_filter_'+str(i)+'.png'
+                cv2.imwrite(img_name,img)
+                cv2.waitKey(300)
 
 
 
@@ -48,8 +67,6 @@ class Viz_Feat(object):
         img = blank_img.astype("uint8")
 
         return img
-
-        
 
 
 
