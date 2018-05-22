@@ -1,0 +1,21 @@
+Instructions to run:
+
+1. Please make sure you have installed TensorFlow, scikit-learn, opencv2 and matplot lib or library required to run the code. Don't import any new python libraries.
+
+2. Put the train and val directories on the same level as your code.
+   
+3. After reviewing the code,
+    Run the script test_cnn.py on the dataset.
+    Result should be the resulting confusion matrix.
+    Running time: 5-10 mins
+
+4. Run the file train_cnn.py
+    Result should be the resulting chart. 	
+    Running time: 30-40 mins
+
+5. Run the visualized_features.py
+   Result should be a total of 15 images from passing the images of the 3 different fruit and veggies through different convolution layers and filters.
+   Running time on AWS (with 4-8GPU, 16RAM)  
+
+6. Run the train_nn.py
+   Result should be performance chart.
