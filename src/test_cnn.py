@@ -15,6 +15,7 @@ image_size = 90
 classes = CLASS_LABELS
 dm = data_manager(classes, image_size)
 
+print(dm)
 cnn = CNN(classes,image_size)
 
 sess = tf.Session()
