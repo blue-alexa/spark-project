@@ -1,8 +1,6 @@
 from data_manager import data_manager
 from nn_classifier import NN
 from trainer import Solver
-
-
 import matplotlib.pyplot as plt
 
 
@@ -24,14 +22,11 @@ K = [1, 20, 100]
 test_losses = []
 train_losses = []
 
-for k in K: 
-	nn = NN(val_data,train_data,n_neighbors=k)
-
+for k in K:
+        nn = NN(val_data,train_data,n_neighbors=k)
 	nn.train_model()
-
 	test_losses.append(nn.get_validation_error())
 	train_losses.append(nn.get_train_error())
-
 
 
 
