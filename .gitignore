@@ -1,2 +1,3 @@
 src/train/*.png
 src/val/*.png
+.ipynb_checkpoints
