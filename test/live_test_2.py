@@ -1,7 +1,6 @@
 import cv2
 import numpy as np
 from keras.models import model_from_yaml
-#from tkinter import Tk, Message, mainloop
 
 # load fine tuned vgg model with data augmentation
 model_path = "fine_tune_VGG_model_aug.yaml"
